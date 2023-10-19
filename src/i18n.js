@@ -8,8 +8,9 @@ i18next
     .use(initReactI18next)
     .use(LanguageDetector)
     .init({
-        supportedLngs: ['en', 'ru'],
+        supportedLngs: ['en', 'ru', 'pl'],
         fallback: 'en',
+        lng: 'en',
         debug: false,
         detection: {
             order: ['cookie', 'localStorage'],
@@ -24,7 +25,7 @@ i18next
     });
 
 /*
-пример использования
+example of use
 
 hook:
 1) const { t } = useTranslation();
@@ -36,7 +37,7 @@ Trans:
     some text <b>bold text</b> - <a>link</a>
    </Trans>
 
-test и someLink это ключи в json объекте с переводами
+test and someLink are keys in a json object with translations
 */
 
 export default i18next;

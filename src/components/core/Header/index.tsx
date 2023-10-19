@@ -44,6 +44,7 @@ export const Header = observer(() => {
     }, [pathname]);
 
     const {
+        t,
         i18n: { language, changeLanguage },
     } = useTranslation();
 
@@ -70,7 +71,7 @@ export const Header = observer(() => {
             {isMobile ? (
                 <>
                     <S.LinksWrapper>
-                        <S.Title>Curriculum vitae</S.Title>
+                        <S.Title>{t('header.Curriculum vitae')}</S.Title>
                     </S.LinksWrapper>
 
                     <S.Burger
@@ -86,24 +87,24 @@ export const Header = observer(() => {
                 </>
             ) : (
                 <>
-                    <S.Title>Curriculum vitae</S.Title>
+                    <S.Title>{t('header.Curriculum vitae')}</S.Title>
 
                     <S.LinksWrapper>
-                        <MenuLink url="root">About</MenuLink>
+                        <MenuLink url="root">{t('header.About')}</MenuLink>
 
                         <MenuLink url="github">GitHub</MenuLink>
 
-                        <MenuLink url="contacts">Contacts</MenuLink>
+                        <MenuLink url="contacts">{t('header.Contacts')}</MenuLink>
 
-                        <MenuLink url="experience">Experience</MenuLink>
+                        <MenuLink url="experience">{t('header.Experience')}</MenuLink>
 
-                        <MenuLink url="education">Education</MenuLink>
+                        <MenuLink url="education">{t('header.Education')}</MenuLink>
 
-                        <MenuLink url="skills">Skills</MenuLink>
+                        <MenuLink url="skills">{t('header.Skills')}</MenuLink>
 
-                        <MenuLink url="languages">Languages</MenuLink>
+                        <MenuLink url="languages">{t('header.Languages')}</MenuLink>
 
-                        <MenuLink url="qualities">Qualities</MenuLink>
+                        <MenuLink url="qualities">{t('header.Qualities')}</MenuLink>
                     </S.LinksWrapper>
 
                     <S.RelativeBlock

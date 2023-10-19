@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Title } from 'components/other';
 
@@ -8,38 +9,44 @@ import photo from './images/photo.jpg';
 import * as S from './units';
 
 export const MainPage = () => {
+    const { t } = useTranslation();
+
     return (
         <STYLE.PageWrapper>
             <S.TitleWrapper>
-                <S.TitleStyled>Igor Shyian</S.TitleStyled>
+                <S.TitleStyled>{t('mainPage.name')}</S.TitleStyled>
 
                 <S.SubTitle>{`(middle frontend developer)`}</S.SubTitle>
             </S.TitleWrapper>
 
             <S.TitleWrapper>
-                <Title scrollMargin={80}>👋🏻 About</Title>
+                <Title scrollMargin={80}>👋🏻 {t('header.About')}</Title>
             </S.TitleWrapper>
 
             <S.Container>
-                <STYLE.ColumnWrapper>
-                    <S.Photo src={photo} />
-
+                <S.AboutWrapper isCenter={false}>
                     <STYLE.ColumnWrapper>
-                        <STYLE.FlexAlignCenterWrapper>
-                            <S.Title>Date of birth:</S.Title>
+                        <S.Photo src={photo} />
 
-                            <S.Text>15.03.2000</S.Text>
-                        </STYLE.FlexAlignCenterWrapper>
+                        <STYLE.ColumnWrapper>
+                            <STYLE.FlexAlignCenterWrapper>
+                                <S.Title>{t('mainPage.Date of birth')}:</S.Title>
 
-                        <STYLE.FlexAlignCenterWrapper>
-                            <S.Title>Address:</S.Title>
+                                <S.Text>15.03.2000</S.Text>
+                            </STYLE.FlexAlignCenterWrapper>
 
-                            <S.Text> Warsaw, Poland</S.Text>
-                        </STYLE.FlexAlignCenterWrapper>
+                            <STYLE.FlexAlignCenterWrapper>
+                                <S.Title>{t('mainPage.Address')}:</S.Title>
 
-                        <S.Title>I have a permanent residence card in Poland</S.Title>
+                                <S.Text>Warsaw, Poland</S.Text>
+                            </STYLE.FlexAlignCenterWrapper>
+
+                            <S.Title>{t('mainPage.residence card')}</S.Title>
+                        </STYLE.ColumnWrapper>
                     </STYLE.ColumnWrapper>
-                </STYLE.ColumnWrapper>
+
+                    <S.AboutText>{t('mainPage.AboutText')}</S.AboutText>
+                </S.AboutWrapper>
             </S.Container>
 
             <S.TitleWrapper>
@@ -58,19 +65,19 @@ export const MainPage = () => {
                     target="_blanck"
                     rel="noopener noreferrer"
                 >
-                    IGOR SHYIAN
+                    {t('mainPage.GitHubLink')}
                 </S.Link>
             </S.Container>
 
             <S.TitleWrapper>
                 <Title id="contacts" scrollMargin={80}>
-                    ☎️ Contacts
+                    ☎️ {t('header.Contacts')}
                 </Title>
             </S.TitleWrapper>
 
             <S.Container>
                 <STYLE.FlexAlignCenterWrapper>
-                    <S.Title>Phone number:</S.Title>
+                    <S.Title>{t('mainPage.Phone number')}:</S.Title>
 
                     <S.Text>{`+48 661 702 699 (whatsapp, viber)`}</S.Text>
                 </STYLE.FlexAlignCenterWrapper>
@@ -89,7 +96,7 @@ export const MainPage = () => {
                         target="_blanck"
                         rel="noopener noreferrer"
                     >
-                        Igor Shyian
+                        {t('mainPage.name')}
                     </S.Link>
                 </STYLE.FlexAlignCenterWrapper>
 
@@ -101,52 +108,174 @@ export const MainPage = () => {
                         target="_blanck"
                         rel="noopener noreferrer"
                     >
-                        Igor Shyian
+                        {t('mainPage.name')}
                     </S.Link>
                 </STYLE.FlexAlignCenterWrapper>
             </S.Container>
 
             <S.TitleWrapper>
                 <Title id="experience" scrollMargin={80}>
-                    {`💼 Experience (3 years)`}
+                    💼 {t('mainPage.Experience')}
                 </Title>
             </S.TitleWrapper>
 
             <S.Container>
                 <S.ExperienceTitle>{`1) Waves ecosystem (01.03.2022 - 30.09.2023)`}</S.ExperienceTitle>
 
-                <S.ExperienceTitle>{`2) Hivex  (01.03.2022 - 01.03.2023)`}</S.ExperienceTitle>
+                <S.Text>{t('mainPage.WavesDescription')}</S.Text>
 
-                <S.ExperienceTitle>{`3) Freelance (01.01.2020 - 31.01.2022)`}</S.ExperienceTitle>
-            </S.Container>
+                <STYLE.FlexAlignCenterWrapper marginTop={20}>
+                    <S.Title>{t('mainPage.Position')}:</S.Title>
 
-            <S.TitleWrapper>
-                <Title id="education" scrollMargin={80}>
-                    🎓 Education
-                </Title>
-            </S.TitleWrapper>
+                    <S.Text>Frontend Developer (React, middle+)</S.Text>
+                </STYLE.FlexAlignCenterWrapper>
 
-            <S.Container>
-                <S.Title>Siedlce University of Natural Sciences and Humanities</S.Title>
+                <STYLE.FlexAlignCenterWrapper marginTop={20}>
+                    <S.Title>{t('mainPage.Team')}:</S.Title>
 
-                <S.Text>{`October 2017 - February 2021 (Bachelor's Degree)`}</S.Text>
+                    <S.Text>2BE, 2FE, 2QA, 2PM, 1 devops, 1 disigner</S.Text>
+                </STYLE.FlexAlignCenterWrapper>
 
-                <S.Text>
-                    {`The topic of engineering work: "Model of the intelligent voice assistant and its
-                    implementation in python"`}
+                <S.Title marginTop={20}>{t('mainPage.Responsibilities')}:</S.Title>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.legacy code refactoring')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.conducting a code review')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.creating reusable components')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.creating new projects')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.architecture planning')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.worked with RESTful')}</S.Text>
+
+                <S.Text paddingLeft={16}>
+                    - {t('mainPage.adaptive design and cross-browser')}
+                </S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.worked closely with designer')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.blockchain connection logic')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.bug fixes')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.writing readable code')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.writing code comments')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.pixel-perfect layouting')}</S.Text>
+
+                <S.Title marginTop={20}>{t('mainPage.Projects')}:</S.Title>
+
+                <S.Link href="https://swop.fi" target="_blanck" rel="noopener noreferrer">
+                    SWOP.FI
+                </S.Link>
+
+                <S.Text>{t('mainPage.SwopfiDescription')}</S.Text>
+
+                <S.Link href="https://axly.io" target="_blanck" rel="noopener noreferrer">
+                    AXLY.IO & APP.AXLY.IO
+                </S.Link>
+
+                <S.Text>{t('mainPage.AxlyDescription')}</S.Text>
+
+                <S.ExperienceTitle
+                    marginTop={40}
+                >{`2) Hivex  (01.02.2021 - 31.01.2022)`}</S.ExperienceTitle>
+
+                <S.Text>{t('mainPage.HivexDescription')}</S.Text>
+
+                <STYLE.FlexAlignCenterWrapper marginTop={20}>
+                    <S.Title>{t('mainPage.Position')}:</S.Title>
+
+                    <S.Text>Frontend Developer (React, middle)</S.Text>
+                </STYLE.FlexAlignCenterWrapper>
+
+                <STYLE.FlexAlignCenterWrapper marginTop={20}>
+                    <S.Title>{t('mainPage.Team')}:</S.Title>
+
+                    <S.Text>1BE, 2FE, 1QA, 1PM, 1 disigner</S.Text>
+                </STYLE.FlexAlignCenterWrapper>
+
+                <S.Title marginTop={20}>{t('mainPage.Responsibilities')}:</S.Title>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.legacy code refactoring')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.creating reusable components')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.code review of junior')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.bug fixes')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.worked with RESTful')}</S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.worked closely with designer')}</S.Text>
+
+                <S.ExperienceTitle
+                    marginTop={40}
+                >{`3) Freelance (01.01.2020 - 31.01.2021)`}</S.ExperienceTitle>
+
+                <STYLE.FlexAlignCenterWrapper>
+                    <S.Title>{t('mainPage.Position')}:</S.Title>
+
+                    <S.Text>Frontend Developer (React)</S.Text>
+                </STYLE.FlexAlignCenterWrapper>
+
+                <S.Title marginTop={20}>{t('mainPage.Responsibilities')}:</S.Title>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.worked as a freelancer')}</S.Text>
+
+                <S.Text paddingLeft={16}>
+                    - {t('mainPage.developed user interfaces for online stores')}
+                </S.Text>
+
+                <S.Text paddingLeft={16}>
+                    - {t('mainPage.conducted analysis and optimization')}
+                </S.Text>
+
+                <S.Text paddingLeft={16}>
+                    - {t('mainPage.developed user interfaces using React.js')}
+                </S.Text>
+
+                <S.Text paddingLeft={16}>
+                    - {t('mainPage.integrated third-party APIs and libraries')}
+                </S.Text>
+
+                <S.Text paddingLeft={16}>- {t('mainPage.worked with clients')}</S.Text>
+
+                <S.Text paddingLeft={16}>
+                    -{' '}
+                    {t(
+                        'mainPage.solved problems related to adaptive design and cross-browser compatibility',
+                    )}
                 </S.Text>
             </S.Container>
 
             <S.TitleWrapper>
-                <Title id="skills" scrollMargin={80}>
-                    ✨ Skills
+                <Title id="education" scrollMargin={80}>
+                    🎓 {t('header.Education')}
                 </Title>
             </S.TitleWrapper>
 
             <S.Container>
-                <STYLE.FlexAlignCenterWrapper gap={100} isCenter={false} fullWidth>
+                <S.Title>{t('mainPage.University')}</S.Title>
+
+                <S.Text>{t('mainPage.UniversityDate')}</S.Text>
+
+                <S.Text>{t('mainPage.topic of engineering work')}</S.Text>
+            </S.Container>
+
+            <S.TitleWrapper>
+                <Title id="skills" scrollMargin={80}>
+                    ✨ {t('header.Skills')}
+                </Title>
+            </S.TitleWrapper>
+
+            <S.Container>
+                <S.SkillsWrapper>
                     <STYLE.ColumnWrapper>
-                        <S.Title>🌟 Hard skills</S.Title>
+                        <S.Title>🌟 {t('mainPage.Hard skills')}</S.Title>
 
                         <S.Text paddingLeft={16}>- JavaScript ES6</S.Text>
 
@@ -186,45 +315,49 @@ export const MainPage = () => {
                     </STYLE.ColumnWrapper>
 
                     <STYLE.ColumnWrapper>
-                        <S.Title>⭐ Soft skills</S.Title>
+                        <S.Title>⭐ {t('mainPage.Soft skills')}</S.Title>
 
-                        <S.Text paddingLeft={16}>- Communication skills</S.Text>
+                        <S.Text paddingLeft={16}>- {t('mainPage.Communication skills')}</S.Text>
 
-                        <S.Text paddingLeft={16}>- Problem-solving skills</S.Text>
+                        <S.Text paddingLeft={16}>- {t('mainPage.Problem-solving skills')}</S.Text>
 
-                        <S.Text paddingLeft={16}>- Adaptability</S.Text>
+                        <S.Text paddingLeft={16}>- {t('mainPage.Adaptability')}</S.Text>
 
-                        <S.Text paddingLeft={16}>- Critical thinking</S.Text>
+                        <S.Text paddingLeft={16}>- {t('mainPage.Critical thinking')}</S.Text>
 
-                        <S.Text paddingLeft={16}>- Teamwork</S.Text>
+                        <S.Text paddingLeft={16}>- {t('mainPage.Teamwork')}</S.Text>
 
-                        <S.Text paddingLeft={16}>- Stress tolerance</S.Text>
+                        <S.Text paddingLeft={16}>- {t('mainPage.Stress tolerance')}</S.Text>
 
-                        <S.Text paddingLeft={16}>- Strategic thinking</S.Text>
-
-                        <S.Text paddingLeft={16}>- Learning and self-improvement ability</S.Text>
-
-                        <S.Text paddingLeft={16}>- Attention to details</S.Text>
+                        <S.Text paddingLeft={16}>- {t('mainPage.Strategic thinking')}</S.Text>
 
                         <S.Text paddingLeft={16}>
-                            - Ability to explain complex concepts in simple terms
+                            - {t('mainPage.Learning and self-improvement ability')}
                         </S.Text>
 
-                        <S.Text paddingLeft={16}>- Documentation and reporting skills</S.Text>
+                        <S.Text paddingLeft={16}>- {t('mainPage.Attention to details')}</S.Text>
 
                         <S.Text paddingLeft={16}>
-                            - Ability to work with various technologies and systems
+                            - {t('mainPage.Ability to explain complex concepts in simple terms')}
                         </S.Text>
 
                         <S.Text paddingLeft={16}>
-                            - Listening and understanding user requirements
+                            - {t('mainPage.Documentation and reporting skills')}
                         </S.Text>
 
-                        <S.Text paddingLeft={16}>{`- I can google :)`}</S.Text>
+                        <S.Text paddingLeft={16}>
+                            - {t('mainPage.Ability to work with various technologies and systems')}
+                        </S.Text>
+
+                        <S.Text paddingLeft={16}>
+                            - {t('mainPage.Listening and understanding user requirements')}
+                        </S.Text>
+
+                        <S.Text paddingLeft={16}>- {t('mainPage.I can google')}</S.Text>
                     </STYLE.ColumnWrapper>
 
                     <STYLE.ColumnWrapper>
-                        <S.Title>🛠️ Apps</S.Title>
+                        <S.Title>🛠️ {t('mainPage.Apps')}</S.Title>
 
                         <S.Text paddingLeft={16}>- JIRA</S.Text>
 
@@ -242,62 +375,57 @@ export const MainPage = () => {
 
                         <S.Text paddingLeft={16}>- VSCode</S.Text>
                     </STYLE.ColumnWrapper>
-                </STYLE.FlexAlignCenterWrapper>
+                </S.SkillsWrapper>
             </S.Container>
 
             <S.TitleWrapper>
                 <Title id="languages" scrollMargin={80}>
-                    🌐 Languages
+                    🌐 {t('header.Languages')}
                 </Title>
             </S.TitleWrapper>
 
             <S.Container>
                 <STYLE.FlexAlignCenterWrapper>
-                    <S.Title>Russian:</S.Title>
+                    <S.Title>{t('mainPage.Russian')}:</S.Title>
 
-                    <S.Text>Native</S.Text>
+                    <S.Text>{t('mainPage.Native')}</S.Text>
                 </STYLE.FlexAlignCenterWrapper>
 
                 <STYLE.FlexAlignCenterWrapper>
-                    <S.Title>Polish:</S.Title>
+                    <S.Title>{t('mainPage.Polish')}:</S.Title>
 
-                    <S.Text>Advanced</S.Text>
+                    <S.Text>{t('mainPage.Advanced')}</S.Text>
                 </STYLE.FlexAlignCenterWrapper>
 
                 <STYLE.FlexAlignCenterWrapper>
-                    <S.Title>English:</S.Title>
+                    <S.Title>{t('mainPage.English')}:</S.Title>
 
-                    <S.Text>
-                        {`Limited working proficiency (free reading of documentation, writing
-                        comments, pre-intermediate)`}
-                    </S.Text>
+                    <S.Text>{t('mainPage.Limited working proficiency')}</S.Text>
                 </STYLE.FlexAlignCenterWrapper>
             </S.Container>
 
             <S.TitleWrapper>
                 <Title id="qualities" scrollMargin={80}>
-                    🤹‍♂️ Personal qualities
+                    🤹‍♂️ {t('mainPage.Qualities')}
                 </Title>
             </S.TitleWrapper>
 
             <S.Container>
-                <S.Text>- Desire for continuous self-improvement</S.Text>
+                <S.Text>- {t('mainPage.Desire for continuous self-improvement')}</S.Text>
 
-                <S.Text>- Results-oriented</S.Text>
+                <S.Text>- {t('mainPage.Results-oriented')}</S.Text>
 
-                <S.Text>- Systems thinking</S.Text>
+                <S.Text>- {t('mainPage.Flexibility and adaptability to changes')}</S.Text>
 
-                <S.Text>- Flexibility and adaptability to changes</S.Text>
+                <S.Text>- {t('mainPage.Responsibility and reliability')}</S.Text>
 
-                <S.Text>- Responsibility and reliability</S.Text>
+                <S.Text>- {t('mainPage.Creativity in finding solutions')}</S.Text>
 
-                <S.Text>- Creativity in finding solutions</S.Text>
+                <S.Text>- {t('mainPage.Analytical mindset')}</S.Text>
 
-                <S.Text>- Attention to details</S.Text>
-
-                <S.Text>- Analytical mindset</S.Text>
-
-                <S.Text>- Ability to understand new technologies and systems</S.Text>
+                <S.Text>
+                    - {t('mainPage.Ability to understand new technologies and systems')}
+                </S.Text>
             </S.Container>
         </STYLE.PageWrapper>
     );

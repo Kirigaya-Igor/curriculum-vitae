@@ -34,6 +34,7 @@ export const MobileMenu = observer(() => {
     const burgerRef = useRef<Nullable<HTMLElement>>(null);
 
     const {
+        t,
         i18n: { language, changeLanguage },
     } = useTranslation();
 
@@ -62,26 +63,26 @@ export const MobileMenu = observer(() => {
             <Expand isOpen={commonStore.isMenuOpen}>
                 <S.ExpandContent ref={menuRef}>
                     <S.LinksWrapper isLight={commonStore.isLight}>
-                        <MenuLink url="root">About</MenuLink>
+                        <MenuLink url="root">{t('header.About')}</MenuLink>
 
-                        <MenuLink url="github">gitHub</MenuLink>
+                        <MenuLink url="github">GitHub</MenuLink>
 
-                        <MenuLink url="contacts">Contacts</MenuLink>
+                        <MenuLink url="contacts">{t('header.Contacts')}</MenuLink>
 
-                        <MenuLink url="experience">Experience</MenuLink>
+                        <MenuLink url="experience">{t('header.Experience')}</MenuLink>
 
-                        <MenuLink url="education">Education</MenuLink>
+                        <MenuLink url="education">{t('header.Education')}</MenuLink>
 
-                        <MenuLink url="skills">Skills</MenuLink>
+                        <MenuLink url="skills">{t('header.Skills')}</MenuLink>
 
-                        <MenuLink url="languages">Languages</MenuLink>
+                        <MenuLink url="languages">{t('header.Languages')}</MenuLink>
 
-                        <MenuLink url="qualities">Qualities</MenuLink>
+                        <MenuLink url="qualities">{t('header.Qualities')}</MenuLink>
                     </S.LinksWrapper>
 
                     <S.LanguagesWrapper isLight={commonStore.isLight}>
                         <S.SwitchWrapper onClick={commonStore.toggleTheme}>
-                            <S.SwitchName>Switch theme</S.SwitchName>
+                            <S.SwitchName></S.SwitchName>
 
                             <S.SwitchStyled
                                 isActive={commonStore.isLight}
@@ -92,7 +93,7 @@ export const MobileMenu = observer(() => {
                         <S.LanguageToggleWrapper
                             onClick={() => setLanguageDropdownOpen(!isLanguageDropdownOpen)}
                         >
-                            <S.SwitchName>Change language</S.SwitchName>
+                            <S.SwitchName>{t('mobileMenu.Change language')}</S.SwitchName>
 
                             <PivotArrow
                                 isActive={isLanguageDropdownOpen}

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { theme } from 'styles';
+import { theme, toEnd } from 'styles';
 
 export const PageWrapper = styled.div`
     position: relative;
@@ -27,12 +27,18 @@ export const FlexAlignCenterWrapper = styled.div<{
     gap?: number;
     fullWidth?: boolean;
     isCenter?: boolean;
+    marginTop?: number;
 }>`
     display: flex;
     align-items: ${({ isCenter = true }) => isCenter && 'center'};
     gap: ${({ gap = 8 }) => `${gap}px`};
 
     width: ${({ fullWidth }) => fullWidth && '100%'};
+    margin-top: ${({ marginTop = 0 }) => `${marginTop}px`};
+
+    ${toEnd('mobile')} {
+        align-items: flex-start;
+    }
 `;
 
 export const FlexBetweenWrapper = styled.div<{ gap?: number; fullWidth?: boolean }>`

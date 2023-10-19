@@ -2,7 +2,7 @@ export const theme = {
     borderRadiusPrimary: '16px',
     borderRadiusSecondary: '8px',
 
-    maxContentWidth: '1440px',
+    maxContentWidth: '1200px',
 
     text: {
         superTiny: {
