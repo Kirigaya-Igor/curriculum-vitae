@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { Title as PageTitle } from 'components/other';
@@ -8,13 +9,21 @@ import * as STYLE from '../units';
 
 import { ReactComponent as GithubIconSVG } from './images/github-icon.svg';
 
-export const TitleWrapper = styled.div`
+export const TitleWrapper = styled.div<{ withMobileWrap?: boolean }>`
     display: flex;
     align-items: center;
     gap: 8px;
 
     width: 100%;
     margin-bottom: 32px;
+
+    ${({ withMobileWrap }) =>
+        withMobileWrap &&
+        css`
+            ${toEnd('mobile')} {
+                flex-wrap: wrap;
+            }
+        `}
 `;
 
 export const TitleStyled = styled(PageTitle)`

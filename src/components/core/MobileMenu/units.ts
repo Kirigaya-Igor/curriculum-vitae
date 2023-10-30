@@ -10,7 +10,9 @@ export const Wrapper = styled.div<{ isOpen: boolean }>`
     left: 8px;
 
     width: calc(100% - 16px);
-    height: 100vh;
+    height: calc(100% - 70px);
+
+    overflow: auto;
 
     pointer-events: ${({ isOpen }) => !isOpen && 'none'};
 

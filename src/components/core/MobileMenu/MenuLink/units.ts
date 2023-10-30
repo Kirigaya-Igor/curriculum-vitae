@@ -7,7 +7,7 @@ export const LinkStyled = styled.a<{ isLight?: boolean }>`
     display: flex;
     align-items: center;
 
-    height: 56px;
+    height: 40px;
     padding: 0 8px;
 
     color: ${({ theme }) => theme.colors.hintText};

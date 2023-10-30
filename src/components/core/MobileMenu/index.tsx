@@ -56,6 +56,8 @@ export const MobileMenu = observer(() => {
         changeLanguage(lang);
 
         setLanguageDropdownOpen(false);
+
+        commonStore.setMenuOpen(false);
     };
 
     return (
@@ -82,7 +84,7 @@ export const MobileMenu = observer(() => {
 
                     <S.LanguagesWrapper isLight={commonStore.isLight}>
                         <S.SwitchWrapper onClick={commonStore.toggleTheme}>
-                            <S.SwitchName></S.SwitchName>
+                            <S.SwitchName>{t('mobileMenu.Switch theme')}</S.SwitchName>
 
                             <S.SwitchStyled
                                 isActive={commonStore.isLight}

@@ -13,7 +13,7 @@ export const MainPage = () => {
 
     return (
         <STYLE.PageWrapper>
-            <S.TitleWrapper>
+            <S.TitleWrapper withMobileWrap>
                 <S.TitleStyled>{t('mainPage.name')}</S.TitleStyled>
 
                 <S.SubTitle>{`(middle frontend developer)`}</S.SubTitle>
