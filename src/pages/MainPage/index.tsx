@@ -214,13 +214,31 @@ export const MainPage = () => {
 
                 <S.ExperienceTitle
                     marginTop={40}
-                >{`3) Freelance (01.01.2020 - 31.01.2021)`}</S.ExperienceTitle>
+                >{`3) Freelance (01.01.2020 - 31.01.2021, 30.09.2023 - now)`}</S.ExperienceTitle>
 
                 <STYLE.FlexAlignCenterWrapper>
                     <S.Title>{t('mainPage.Position')}:</S.Title>
 
                     <S.Text>Frontend Developer (React)</S.Text>
                 </STYLE.FlexAlignCenterWrapper>
+
+                <S.Title marginTop={20}>{t('mainPage.Projects')}:</S.Title>
+
+                <S.Link href="https://0xshadow.com/" target="_blanck" rel="noopener noreferrer">
+                    0xshadow.com
+                </S.Link>
+
+                <S.Link
+                    href="https://merchant.kyt-pay.com/"
+                    target="_blanck"
+                    rel="noopener noreferrer"
+                >
+                    merchant.kyt-pay.com
+                </S.Link>
+
+                <S.Link href="https://app.rivo.xyz/" target="_blanck" rel="noopener noreferrer">
+                    app.rivo.xyz
+                </S.Link>
 
                 <S.Title marginTop={20}>{t('mainPage.Responsibilities')}:</S.Title>
 
