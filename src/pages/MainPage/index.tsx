@@ -11,6 +11,101 @@ import * as S from './units';
 export const MainPage = () => {
     const { t } = useTranslation();
 
+    const ammerResponsibilities = [
+        t('mainPage.legacy code refactoring'),
+        t('mainPage.conducting a code review'),
+        t('mainPage.creating reusable components'),
+        t('mainPage.creating new projects'),
+        t('mainPage.architecture planning'),
+        t('mainPage.worked with RESTful'),
+        t('mainPage.adaptive design and cross-browser'),
+        t('mainPage.worked closely with designer'),
+        t('mainPage.blockchain connection logic'),
+        t('mainPage.bug fixes'),
+        t('mainPage.writing readable code'),
+        t('mainPage.writing code comments'),
+        t('mainPage.pixel-perfect layouting'),
+    ];
+
+    const hivexResponsibilities = [
+        t('mainPage.legacy code refactoring'),
+        t('mainPage.creating reusable components'),
+        t('mainPage.code review of junior'),
+        t('mainPage.bug fixes'),
+        t('mainPage.worked with RESTful'),
+        t('mainPage.worked closely with designer'),
+    ];
+
+    const freelanceResponsibilities = [
+        t('mainPage.worked as a freelancer'),
+        t('mainPage.developed user interfaces for online stores'),
+        t('mainPage.conducted analysis and optimization'),
+        t('mainPage.developed user interfaces using React.js'),
+        t('mainPage.integrated third-party APIs and libraries'),
+        t('mainPage.worked with clients'),
+        t('mainPage.solved problems related to adaptive design and cross-browser compatibility'),
+    ];
+
+    const hardSkills = [
+        'JavaScript ES6',
+        'TypeScript',
+        'React.js',
+        'Next.js',
+        'MobX',
+        'Redux',
+        'CSS-in-JS',
+        'preprocessors',
+        'REST API',
+        'Bootstrap',
+        'MUI',
+        'Git',
+        'Webpack',
+        'PWA',
+        'WebSockets',
+        'Docker',
+        'Charts in React',
+        'Keycloak (custom pages)',
+        'DRY, KISS',
+    ];
+
+    const softSkills = [
+        t('mainPage.Communication skills'),
+        t('mainPage.Problem-solving skills'),
+        t('mainPage.Adaptability'),
+        t('mainPage.Critical thinking'),
+        t('mainPage.Teamwork'),
+        t('mainPage.Stress tolerance'),
+        t('mainPage.Strategic thinking'),
+        t('mainPage.Learning and self-improvement ability'),
+        t('mainPage.Attention to details'),
+        t('mainPage.Ability to explain complex concepts in simple terms'),
+        t('mainPage.Documentation and reporting skills'),
+        t('mainPage.Ability to work with various technologies and systems'),
+        t('mainPage.Listening and understanding user requirements'),
+        t('mainPage.I can google'),
+    ];
+
+    const apps = [
+        'JIRA',
+        'Confluence',
+        'Google Workspace',
+        'Microsoft Word',
+        'Figma',
+        'Postman',
+        'PyCharm',
+        'VSCode',
+    ];
+
+    const qualities = [
+        t('mainPage.Desire for continuous self-improvement'),
+        t('mainPage.Results-oriented'),
+        t('mainPage.Flexibility and adaptability to changes'),
+        t('mainPage.Responsibility and reliability'),
+        t('mainPage.Creativity in finding solutions'),
+        t('mainPage.Analytical mindset'),
+        t('mainPage.Ability to understand new technologies and systems'),
+    ];
+
     return (
         <STYLE.PageWrapper>
             <S.TitleWrapper withMobileWrap>
@@ -49,6 +144,8 @@ export const MainPage = () => {
                 </S.AboutWrapper>
             </S.Container>
 
+            {/* ------------------------------------------------------------- */}
+
             <S.TitleWrapper>
                 <STYLE.FlexAlignCenterWrapper gap={10}>
                     <S.GithubIcon />
@@ -68,6 +165,8 @@ export const MainPage = () => {
                     {t('mainPage.GitHubLink')}
                 </S.Link>
             </S.Container>
+
+            {/* ------------------------------------------------------------- */}
 
             <S.TitleWrapper>
                 <Title id="contacts" scrollMargin={80}>
@@ -119,8 +218,58 @@ export const MainPage = () => {
                 </Title>
             </S.TitleWrapper>
 
+            {/* ------------------------------------------------------------- */}
+
             <S.Container>
-                <S.ExperienceTitle>{`1) Waves ecosystem (01.03.2022 - 30.09.2023)`}</S.ExperienceTitle>
+                <S.ExperienceTitle>{`1) Ammer Technologies AG (01.02.2024 - present)`}</S.ExperienceTitle>
+
+                <S.Text>{t('mainPage.AmmerDescription')}</S.Text>
+
+                <STYLE.FlexAlignCenterWrapper marginTop={20}>
+                    <S.Title>{t('mainPage.Position')}:</S.Title>
+
+                    <S.Text>Frontend Developer (React, middle+)</S.Text>
+                </STYLE.FlexAlignCenterWrapper>
+
+                <STYLE.FlexAlignCenterWrapper marginTop={20}>
+                    <S.Title>{t('mainPage.Team')}:</S.Title>
+
+                    <S.Text>2BE, 2FE, 2QA, 2PM, 1 devops, 2 disigner</S.Text>
+                </STYLE.FlexAlignCenterWrapper>
+
+                <S.Title marginTop={20}>{t('mainPage.Responsibilities')}:</S.Title>
+
+                {ammerResponsibilities.map((item, i) => (
+                    <S.Text key={i} paddingLeft={16}>
+                        - {item}
+                    </S.Text>
+                ))}
+
+                <S.Title marginTop={20}>{t('mainPage.Projects')}:</S.Title>
+
+                <S.Link
+                    href="https://landing-ammer-pay.ammer.io/"
+                    target="_blanck"
+                    rel="noopener noreferrer"
+                >
+                    landing-ammer-pay.ammer.io
+                </S.Link>
+
+                <S.Link
+                    href="https://merchants.ammer.io/"
+                    target="_blanck"
+                    rel="noopener noreferrer"
+                >
+                    merchants.ammer.io
+                </S.Link>
+
+                <S.Text>{t('mainPage.AmmerPayDescription')}</S.Text>
+
+                {/* ------------------------------------------------------------- */}
+
+                <S.ExperienceTitle
+                    marginTop={40}
+                >{`2) Waves ecosystem (01.03.2022 - 30.09.2023)`}</S.ExperienceTitle>
 
                 <S.Text>{t('mainPage.WavesDescription')}</S.Text>
 
@@ -136,35 +285,7 @@ export const MainPage = () => {
                     <S.Text>2BE, 2FE, 2QA, 2PM, 1 devops, 1 disigner</S.Text>
                 </STYLE.FlexAlignCenterWrapper>
 
-                <S.Title marginTop={20}>{t('mainPage.Responsibilities')}:</S.Title>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.legacy code refactoring')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.conducting a code review')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.creating reusable components')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.creating new projects')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.architecture planning')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.worked with RESTful')}</S.Text>
-
-                <S.Text paddingLeft={16}>
-                    - {t('mainPage.adaptive design and cross-browser')}
-                </S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.worked closely with designer')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.blockchain connection logic')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.bug fixes')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.writing readable code')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.writing code comments')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.pixel-perfect layouting')}</S.Text>
+                <S.Title marginTop={20}>{t('mainPage.similarResponsibilities')}</S.Title>
 
                 <S.Title marginTop={20}>{t('mainPage.Projects')}:</S.Title>
 
@@ -180,9 +301,11 @@ export const MainPage = () => {
 
                 <S.Text>{t('mainPage.AxlyDescription')}</S.Text>
 
+                {/* ------------------------------------------------------------- */}
+
                 <S.ExperienceTitle
                     marginTop={40}
-                >{`2) Hivex  (01.02.2021 - 31.01.2022)`}</S.ExperienceTitle>
+                >{`3) Hivex  (01.02.2021 - 31.01.2022)`}</S.ExperienceTitle>
 
                 <S.Text>{t('mainPage.HivexDescription')}</S.Text>
 
@@ -200,21 +323,17 @@ export const MainPage = () => {
 
                 <S.Title marginTop={20}>{t('mainPage.Responsibilities')}:</S.Title>
 
-                <S.Text paddingLeft={16}>- {t('mainPage.legacy code refactoring')}</S.Text>
+                {hivexResponsibilities.map((item, i) => (
+                    <S.Text key={i} paddingLeft={16}>
+                        - {item}
+                    </S.Text>
+                ))}
 
-                <S.Text paddingLeft={16}>- {t('mainPage.creating reusable components')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.code review of junior')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.bug fixes')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.worked with RESTful')}</S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.worked closely with designer')}</S.Text>
+                {/* ------------------------------------------------------------- */}
 
                 <S.ExperienceTitle
                     marginTop={40}
-                >{`3) Freelance (01.01.2020 - 31.01.2021, 30.09.2023 - now)`}</S.ExperienceTitle>
+                >{`4) Freelance (01.01.2020 - 31.01.2021, 30.09.2023 - now)`}</S.ExperienceTitle>
 
                 <STYLE.FlexAlignCenterWrapper>
                     <S.Title>{t('mainPage.Position')}:</S.Title>
@@ -228,47 +347,20 @@ export const MainPage = () => {
                     0xshadow.com
                 </S.Link>
 
-                <S.Link
-                    href="https://merchant.kyt-pay.com/"
-                    target="_blanck"
-                    rel="noopener noreferrer"
-                >
-                    merchant.kyt-pay.com
-                </S.Link>
-
                 <S.Link href="https://app.rivo.xyz/" target="_blanck" rel="noopener noreferrer">
                     app.rivo.xyz
                 </S.Link>
 
                 <S.Title marginTop={20}>{t('mainPage.Responsibilities')}:</S.Title>
 
-                <S.Text paddingLeft={16}>- {t('mainPage.worked as a freelancer')}</S.Text>
-
-                <S.Text paddingLeft={16}>
-                    - {t('mainPage.developed user interfaces for online stores')}
-                </S.Text>
-
-                <S.Text paddingLeft={16}>
-                    - {t('mainPage.conducted analysis and optimization')}
-                </S.Text>
-
-                <S.Text paddingLeft={16}>
-                    - {t('mainPage.developed user interfaces using React.js')}
-                </S.Text>
-
-                <S.Text paddingLeft={16}>
-                    - {t('mainPage.integrated third-party APIs and libraries')}
-                </S.Text>
-
-                <S.Text paddingLeft={16}>- {t('mainPage.worked with clients')}</S.Text>
-
-                <S.Text paddingLeft={16}>
-                    -{' '}
-                    {t(
-                        'mainPage.solved problems related to adaptive design and cross-browser compatibility',
-                    )}
-                </S.Text>
+                {freelanceResponsibilities.map((item, i) => (
+                    <S.Text key={i} paddingLeft={16}>
+                        - {item}
+                    </S.Text>
+                ))}
             </S.Container>
+
+            {/* ------------------------------------------------------------- */}
 
             <S.TitleWrapper>
                 <Title id="education" scrollMargin={80}>
@@ -284,6 +376,8 @@ export const MainPage = () => {
                 <S.Text>{t('mainPage.topic of engineering work')}</S.Text>
             </S.Container>
 
+            {/* ------------------------------------------------------------- */}
+
             <S.TitleWrapper>
                 <Title id="skills" scrollMargin={80}>
                     ✨ {t('header.Skills')}
@@ -295,106 +389,36 @@ export const MainPage = () => {
                     <STYLE.ColumnWrapper>
                         <S.Title>🌟 {t('mainPage.Hard skills')}</S.Title>
 
-                        <S.Text paddingLeft={16}>- JavaScript ES6</S.Text>
-
-                        <S.Text paddingLeft={16}>- TypeScript</S.Text>
-
-                        <S.Text paddingLeft={16}>- React.js</S.Text>
-
-                        <S.Text paddingLeft={16}>- Next.js</S.Text>
-
-                        <S.Text paddingLeft={16}>- Redux</S.Text>
-
-                        <S.Text paddingLeft={16}>- MobX</S.Text>
-
-                        <S.Text paddingLeft={16}>- CSS-in-JS</S.Text>
-
-                        <S.Text paddingLeft={16}>- preprocessors</S.Text>
-
-                        <S.Text paddingLeft={16}>- REST API</S.Text>
-
-                        <S.Text paddingLeft={16}>- Bootstrap</S.Text>
-
-                        <S.Text paddingLeft={16}>- MUI</S.Text>
-
-                        <S.Text paddingLeft={16}>- Git</S.Text>
-
-                        <S.Text paddingLeft={16}>- Webpack</S.Text>
-
-                        <S.Text paddingLeft={16}>- PWA</S.Text>
-
-                        <S.Text paddingLeft={16}>- WebSockets</S.Text>
-
-                        <S.Text paddingLeft={16}>- Docker</S.Text>
-
-                        <S.Text paddingLeft={16}>- DRY, KISS</S.Text>
-
-                        <S.Text paddingLeft={16}>- Сharts in React</S.Text>
+                        {hardSkills.map((item, i) => (
+                            <S.Text key={i} paddingLeft={16}>
+                                - {item}
+                            </S.Text>
+                        ))}
                     </STYLE.ColumnWrapper>
 
                     <STYLE.ColumnWrapper>
                         <S.Title>⭐ {t('mainPage.Soft skills')}</S.Title>
 
-                        <S.Text paddingLeft={16}>- {t('mainPage.Communication skills')}</S.Text>
-
-                        <S.Text paddingLeft={16}>- {t('mainPage.Problem-solving skills')}</S.Text>
-
-                        <S.Text paddingLeft={16}>- {t('mainPage.Adaptability')}</S.Text>
-
-                        <S.Text paddingLeft={16}>- {t('mainPage.Critical thinking')}</S.Text>
-
-                        <S.Text paddingLeft={16}>- {t('mainPage.Teamwork')}</S.Text>
-
-                        <S.Text paddingLeft={16}>- {t('mainPage.Stress tolerance')}</S.Text>
-
-                        <S.Text paddingLeft={16}>- {t('mainPage.Strategic thinking')}</S.Text>
-
-                        <S.Text paddingLeft={16}>
-                            - {t('mainPage.Learning and self-improvement ability')}
-                        </S.Text>
-
-                        <S.Text paddingLeft={16}>- {t('mainPage.Attention to details')}</S.Text>
-
-                        <S.Text paddingLeft={16}>
-                            - {t('mainPage.Ability to explain complex concepts in simple terms')}
-                        </S.Text>
-
-                        <S.Text paddingLeft={16}>
-                            - {t('mainPage.Documentation and reporting skills')}
-                        </S.Text>
-
-                        <S.Text paddingLeft={16}>
-                            - {t('mainPage.Ability to work with various technologies and systems')}
-                        </S.Text>
-
-                        <S.Text paddingLeft={16}>
-                            - {t('mainPage.Listening and understanding user requirements')}
-                        </S.Text>
-
-                        <S.Text paddingLeft={16}>- {t('mainPage.I can google')}</S.Text>
+                        {softSkills.map((item, i) => (
+                            <S.Text key={i} paddingLeft={16}>
+                                - {item}
+                            </S.Text>
+                        ))}
                     </STYLE.ColumnWrapper>
 
                     <STYLE.ColumnWrapper>
                         <S.Title>🛠️ {t('mainPage.Apps')}</S.Title>
 
-                        <S.Text paddingLeft={16}>- JIRA</S.Text>
-
-                        <S.Text paddingLeft={16}>- Confluence</S.Text>
-
-                        <S.Text paddingLeft={16}>- Google Workspace</S.Text>
-
-                        <S.Text paddingLeft={16}>- Microsoft Word</S.Text>
-
-                        <S.Text paddingLeft={16}>- Figma</S.Text>
-
-                        <S.Text paddingLeft={16}>- Postman</S.Text>
-
-                        <S.Text paddingLeft={16}>- PyCharm</S.Text>
-
-                        <S.Text paddingLeft={16}>- VSCode</S.Text>
+                        {apps.map((item, i) => (
+                            <S.Text key={i} paddingLeft={16}>
+                                - {item}
+                            </S.Text>
+                        ))}
                     </STYLE.ColumnWrapper>
                 </S.SkillsWrapper>
             </S.Container>
+
+            {/* ------------------------------------------------------------- */}
 
             <S.TitleWrapper>
                 <Title id="languages" scrollMargin={80}>
@@ -422,6 +446,8 @@ export const MainPage = () => {
                 </STYLE.FlexAlignCenterWrapper>
             </S.Container>
 
+            {/* ------------------------------------------------------------- */}
+
             <S.TitleWrapper>
                 <Title id="qualities" scrollMargin={80}>
                     🤹‍♂️ {t('mainPage.Qualities')}
@@ -429,21 +455,9 @@ export const MainPage = () => {
             </S.TitleWrapper>
 
             <S.Container>
-                <S.Text>- {t('mainPage.Desire for continuous self-improvement')}</S.Text>
-
-                <S.Text>- {t('mainPage.Results-oriented')}</S.Text>
-
-                <S.Text>- {t('mainPage.Flexibility and adaptability to changes')}</S.Text>
-
-                <S.Text>- {t('mainPage.Responsibility and reliability')}</S.Text>
-
-                <S.Text>- {t('mainPage.Creativity in finding solutions')}</S.Text>
-
-                <S.Text>- {t('mainPage.Analytical mindset')}</S.Text>
-
-                <S.Text>
-                    - {t('mainPage.Ability to understand new technologies and systems')}
-                </S.Text>
+                {qualities.map((item, i) => (
+                    <S.Text key={i}>- {item}</S.Text>
+                ))}
             </S.Container>
         </STYLE.PageWrapper>
     );

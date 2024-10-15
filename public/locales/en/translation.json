@@ -18,7 +18,7 @@
         "Date of birth": "Date of birth",
         "Address": "Address",
         "residence card": "I have a permanent residence card in Poland",
-        "AboutText": "My last place of work was WAVES company, I worked there as a Middle+ Frontend Developer. My role was to create a new website functionality and support it, and I also did a code review of my colleagues. Initially I was working on a swop.fi project on the WAVES blockchain. The turnover of the project was $ 10 million and more than 100,000 users, who accounted for 25% of all transactions on the blockchain. After a year of work, it was decided to create a new project axly.io so for the last six months I have been working on 2 projects in parallel. axly.io launched in August 2023. Unfortunately, the current crisis is very difficult for the WAVES blockchain and a lot of teams have been disbanded, including mine.",
+        "AboutText": "My last job was with Ammer Technologies and I worked there as a Middle+ Frontend Developer. My role was to create new functionality for the site, as well as create new sites and maintain them. I also had the experience of creating styled emails and custom pages for the keycklock authorization service. I created a total of 6 websites for this company.",
         "Qualities": "Personal qualities",
         "GitHubLink": "IGOR SHYIAN",
         "Phone number": "Phone number",
@@ -84,6 +84,9 @@
         "Responsibility and reliability": "Responsibility and reliability",
         "Creativity in finding solutions": "Creativity in finding solutions",
         "Analytical mindset": "Analytical mindset",
-        "Ability to understand new technologies and systems": "Ability to understand new technologies and systems"
+        "similarResponsibilities": "My responsibilities at this company were similar to those at Ammer Technologies AG",
+        "Ability to understand new technologies and systems": "Ability to understand new technologies and systems",
+        "AmmerDescription": "During my work in this company I created more than 4 projects, as well as created several new pages for the existing project and new components that were used in many projects for this company. I also created custom pages for Keycloak authorization service.",
+        "AmmerPayDescription": "Ammer Pay is a platform that enables businesses to accept cryptocurrency payments both online and in-store. It is a non-custodial service, meaning users maintain full control over their crypto funds. Businesses can create invoices, manage inventory, and set up payment terminals for crypto transactions."
     }
 }
